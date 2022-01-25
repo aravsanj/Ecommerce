@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Typography, Box } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { userFetch } from "../redux/actions/signInActions";
+import { PriceFilter } from "./PriceFilter";
 
 export const NavStrip = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ export const NavStrip = () => {
         color: "white",
         display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
       <Typography
@@ -39,6 +41,9 @@ export const NavStrip = () => {
       >
         Welcome, {name}
       </Typography>
+      <Box sx={{ marginRight: "10px" }}>
+        <PriceFilter />
+      </Box>
     </Box>
   );
 };

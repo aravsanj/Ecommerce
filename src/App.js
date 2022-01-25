@@ -40,6 +40,7 @@ const App = () => {
         </ThemeProvider>
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
+
           <Route path="/product">
             <Route path=":id" element={<ProductPage />} />
           </Route>
