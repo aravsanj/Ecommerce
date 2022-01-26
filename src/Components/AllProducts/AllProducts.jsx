@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { ProductItem } from "../../Utils/ProductItem";
 import { Container, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
-import { Loader } from "../../Utils/Loader";
 import { Search } from "../../Utils/Search";
 import { NoSearchResults } from "../../Utils/NoSearchResults";
 
@@ -20,8 +19,6 @@ export const AllProducts = ({ products }) => {
       return val;
     }
   });
-
-  console.log(searchedProducts);
 
   return (
     <>

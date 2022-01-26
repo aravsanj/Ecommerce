@@ -3,9 +3,12 @@ import { Typography, Box } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { userFetch } from "../redux/actions/signInActions";
 import { PriceFilter } from "./PriceFilter";
+import { useLocation } from "react-router-dom";
 
 export const NavStrip = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  console.log(location);
 
   const isLoggedIn = useSelector((state) => state.signIn.isLoggedIn);
 
@@ -42,7 +45,7 @@ export const NavStrip = () => {
         Welcome, {name}
       </Typography>
       <Box sx={{ marginRight: "10px" }}>
-        <PriceFilter />
+        {location.pathname == "/" && <PriceFilter />}
       </Box>
     </Box>
   );

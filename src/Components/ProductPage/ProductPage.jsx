@@ -33,7 +33,7 @@ export const ProductPage = () => {
   useEffect(() => {
     dispatch(singleProductFetch(id));
     return dispatch(removeProduct());
-  }, []);
+  }, [id]);
 
   const product = useSelector((state) => state.product.single);
   const cartItems = useSelector((state) => state.cart.cartProducts);

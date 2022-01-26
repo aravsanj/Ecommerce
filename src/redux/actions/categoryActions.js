@@ -14,12 +14,6 @@ function setAllCategory(data) {
   };
 }
 
-export function removeCat() {
-  return {
-    type: "REMOVE_CAT",
-  };
-}
-
 export const singleCategoryFetch = (cat) => async (dispatch) => {
   const response = await axios.get(
     `https://fakestoreapi.com/products/category/${cat}`
@@ -31,5 +25,11 @@ function setSingleCategory(data) {
   return {
     type: "SINGLE_CATEGORY",
     payload: data,
+  };
+}
+
+export function removeCat() {
+  return {
+    type: "REMOVE_CATEGORY",
   };
 }

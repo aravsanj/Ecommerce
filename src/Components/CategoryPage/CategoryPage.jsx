@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { singleCategoryFetch } from "../../redux/actions/categoryActions";
 import { ProductItem } from "../../Utils/ProductItem";
@@ -29,12 +29,7 @@ export const CategoryPage = () => {
         >
           {categoryProds.map((product, idx) => (
             <Grid item xs={4} sm={4} md={3} key={idx}>
-              <Link
-                to={`/product/${product.id}`}
-                style={{ textDecoration: "none" }}
-              >
-                <ProductItem product={product} />
-              </Link>
+              <ProductItem product={product} />
             </Grid>
           ))}
         </Grid>
