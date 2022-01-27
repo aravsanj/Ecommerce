@@ -1,6 +1,6 @@
 let initialState = {
   all: [],
-  single: [],
+  single: "",
 };
 
 export function categoryReducer(state = initialState, action) {
@@ -10,7 +10,7 @@ export function categoryReducer(state = initialState, action) {
     case "SINGLE_CATEGORY":
       return { ...state, single: action.payload };
     case "REMOVE_CATEGORY":
-      return { ...state, single: [] };
+      return { ...state, single: "" };
     default:
       return state;
   }
